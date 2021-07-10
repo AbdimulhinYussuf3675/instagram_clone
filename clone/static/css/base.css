@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+* {
+    max-width: 100%;
+}
+.navbar{
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+}
+
+.logo{
+    width: 40%;
+    text-align: center;
+    font-family: 'Chicle', cursive;
+    font-weight: 700;
+    font-size: 150%;
+}
+
+.search-bar{
+    width: 20%;
+    border: 1px solid #DBDBDB;
+    background-color: #FAFAFA;
+
+}
+
+.search-bar:focus{
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid #DBDBDB;
+    background-color: #FAFAFA;
+}
+
+.nav-right-items{
+    width: 40%;
+    text-align: center;
+    margin: 0;
+    margin-left: 15%;
+
+}
+
+/* messages */
+
+
+@media(max-width: 576px) {
+    .search-bar{
+        display: none;
+    }
+}

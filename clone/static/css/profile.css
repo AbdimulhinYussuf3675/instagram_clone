@@ -1,0 +1,35 @@
+body{
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.round{
+    border: 1px solid #DBDBDB;
+    border-radius: 50%;
+}
+
+.profile-name , .profile-edit{
+    display: inline;
+    margin-left: 40px;
+}
+
+.profile-details{
+    margin-left:25%;
+   
+    
+}
+
+.profile-details .p-details{
+    display: inline;
+    padding: 25px;
+
+    
+}
+
+.all-posts img{
+    padding: 1px;
+    margin: 15px;
+    border: 1px solid black;
+}

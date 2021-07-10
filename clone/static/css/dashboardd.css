@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+body{
+    background-color:  #FAFAFA;
+}
+
+.card{
+    border: 1px solid #DBDBDB;
+    border-bottom: 0;
+    margin: 0;
+    margin-top: 3%;
+}
+.paid-text{
+    font-size: 70%;
+ }
+ .card-image{
+    margin: 0;
+    margin-top: 3%;
+    padding: 30px;
+    max-width: 100%;
+}
+
+.card-content{
+    margin: 0;
+    margin-left: 4%;
+    margin-top: 2%;
+    padding:12px;
+}
+
+.insta-button{
+    color: #262626;
+    font-size: 150%;
+    margin: 0;
+    margin-left: 2%;
+    margin-top: 1%;
+    font-weight: 200;
+    padding-left: 25px;
+}
+
+.card-text {
+    margin-left: 2%;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 25px;
+}
+p.card-text-caption{
+    margin-left: 2%;
+    padding-left: 25px;
+}
+
+p.paid-text.card-content{
+    padding-left: 15px;
+}
+
+.comment-bar{
+     
+    width: 100%;
+    
+    
+}
+.post-button{
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-left: none;
+    color: #3995F6;
+   
+}
+.comment:focus{
+    outline: 0;
+    box-shadow: none;
+    border: 1px solid #DBDBDB;
+    border-right: 0;
+}
+.post-button:focus{
+    outline: 0;
+    box-shadow: none;
+ }
+
+ .post-button:hover{
+    color: #3995F6;
+ }
+
+ .comment-section {
+    font-family: 'Roboto', sans-serif;
+    padding-left: 25px;
+}
+.liked{
+    color: red;
+}
+
+
+@media(max-width:700px){
+    .insta-button {
+        color: #262626;
+        font-size: 150%;
+        margin: 0;
+        margin-left: 2%;
+        margin-top: 1%;
+        font-weight: 200;
+        
+    }
+
+    .card-text {
+        padding-left: 25px;
+    }
+
+ 
+ 
+      
+
+
+
+}

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Profile,Image,Comment
+from .models import Profile
 from django.http import HttpRequest,HttpResponse,HttpResponseRedirect
 from .forms import UserRegistratinForm
 from django.contrib.auth import authenticate,login

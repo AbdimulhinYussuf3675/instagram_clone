@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block styles %}
+    {{block.super}}
+    <link rel="stylesheet" href="{% static 'css/dashboardd.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content%}
+
+    {% for post in posts%}
+    
+    <div class="feed d-flex justify-content-center row">
+
+        <div class="col-">
+              
+                <div class="card" >
+         
+                        <h10 class=" card-content">
+                        <img src="#" height="30" class="round" alt="">  
+                        <a href="profile/{{post.profile.user.username}}"><strong> {{post.profile.user.username}}</strong></a> </h10>
+                        <p class="paid-text card-content" > paid partnership with Moringa <br> Nairobi, Kenya</p>
+                        
+                        <img src="{{post.image.url}}" height="500" class="card-img-top card-image" alt="...">
+                
+                    <p> 
+                       
+                        {% if request.user in post.likes.all %}
+                        <a > <i class="far fa-heart insta-button like-unlike" data-post="{{post.id}}"  data-action="like" style="color: red;" ></i>
+                        unlike
+                        {% else %}
+                        <a > <i class="far fa-heart insta-button like-unlike" data-post="{{post.id}}"  data-action="like" ></i>
+                        like
+                        {% endif %}
+       
+                        
+                        <!-- <a href="#" class=""> <i class="far fa-comment insta-button"></i>     </a> -->
+                        <a href="#" class=""> <i class="far fa-paper-plane insta-button"></i>  </a>
+                    </p>
+                    
+                    <p class="card-text">{{post.likes.count}} likes</p>  
+                    <p class="card-text-caption"> <strong>{{post.profile.user}}</strong> {{post.caption}}  </p>
+                    <div class="comment-section" style="margin-left: 2%;">
+                        <small>comments......</small><br>
+                        {% if comments %}
+                        {% for comment in comments %}
+                        {%if comment.post.id == post.id %}
+                        <b style="display: block;">[{{comment.commentor}}]:</b><p class="comments" style="display: inline;">{{comment.comment}}</p><br><br>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %} 
+                    </div>
+
+                    
+                    </div>
+                    <div class="comment-section comment-bar">
+                        <form method="post" action="comment/{{post.id}}">
+                            {% csrf_token %}
+                            
+                            <div class="input-group">
+                                <input type="text" class="form-control comment"placeholder="Add a Comment ..." name="comment" >
+                                <div class="input-group-append">
+                                    <button class="btn post-button " type="submit" > Post </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+        </div>
+    </div>
+    <br><br><br>
+
+    {% endfor %}
+
+
+    
+        
+    {% endblock %}
+</body>
+</html>

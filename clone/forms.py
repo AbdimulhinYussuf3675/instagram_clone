@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile,Image
 
 class UserRegistratinForm(forms.ModelForm):
     password = forms.CharField(label ='Password',
@@ -20,4 +20,25 @@ class UserRegistratinForm(forms.ModelForm):
             raise forms.ValidationError('Passwords dont match')
     
         return cd['password2']
+
+class ImageForm(forms.ModelForm):
+    class Meta:
+        model =Image
+        fields = ('image','caption')
+
+
+
+class UserEditForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('first_name','last_name','email')
+
+class ProfileEditForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('location','photo','bio')
+
+class loginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget = forms.PasswordInput) #using the PasswordInput widget to render the password HTML element
             

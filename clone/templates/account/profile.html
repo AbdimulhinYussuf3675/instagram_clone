@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams~instagramclone</title>
+    {% block styles %}
+    {{block.super}}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    {% endblock %}
+</head>
+<body>
+    {% block content%}
+    
+    <div class="container" style="margin-top: 20px;">
+        <div class="profile-img ">
+            <img src="{{profile.photo.url }}" alt="" class="round" height ="250">
+            <h2 class="profile-name">{{profile.user}}</h2>
+            {% if profile.user.id == request.user.id %}
+            <p class="profile-edit"><a href="{% url 'edit' %}"><button type="button" class="btn btn-outline-primary btn-rounded waves-effect">Edit Profile</button></a></p>
+            {% else %}
+
+                {% if is_follow %}
+                <p class="profile-edit"><a href="{% url 'follow' profile.user.id %}"><button type="button" class="btn btn-outline-success waves-effect">Unfollow</button></a></p>
+                {% else %}
+                <p class="profile-edit"><a href="{% url 'follow' profile.user.id %}"><button type="button" class="btn btn-outline-primary btn-rounded waves-effect">Follow</button></a></p>
+                {% endif %}
+
+            
+            {% endif %}
+            <div class="profile-details">
+            
+                <b><p>"{{profile.bio}}"</p></b>
+                <p class="p-details"><b>{{images|length}}</b> Posts</p>
+                <p class="p-details"> <b>{{followers}}</b> Followers</p>
+                <p class="p-details"><b>{{following}}</b> Following</p>
+            </div>
+        </div>
+        <hr>
+
+        <div class="all-posts">
+            {% for image in images %}
+            
+            <img src="{{ image.image.url}}" alt="" height="200" width="200">
+
+            {% endfor %}
+        </div>
+    </div>
+  
+
+
+    
+
+
+    
+        
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adams~instagramclone</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container" style="margin-top: 20px;">
+        {% if profiles %}
+        <b>{{profiles|length}} Search Results</b>
+        {% for profile in profiles %}
+        
+        <div class="card w-75" style="margin-top: 15px;">
+            <div class="card-body">
+              <h5 class="card-title">{{profile.user}}</h5>
+              <p class="card-text">"{{profile.bio}}"</p>
+              <a href="{%url 'get_profile' profile.user %}" class="btn btn-secondary">Visit Profile</a>
+             
+            </div>
+          </div>
+          {% endfor %}
+          {% else %}
+          <b>No profiles matched the search term "{{searchterm}}"</b>
+          {% endif %}
+
+    </div>
+
+    {% endblock %}
+</body>
+</html>

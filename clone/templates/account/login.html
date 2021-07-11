@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{%extend 'base.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,35 +6,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block styles %}
-    {{block.super}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    {% endblock %}
     <title>Adams~instagramclone</title>
 </head>
 
 <body>
 
-    {% block content %}
     <section class="login-form">
         <div class="row justify-content-center">
             <div class="login-box col-lg-4 col-md-6 col-sm-12">
+                <h2 class="instaname text-center">Insta-Clone</h2>
 
-                <h2 class="instaname text-center">Instagramclone</h2>
- 
-                <form  method="post">
+                <form method="post">
 
-                    {{ user_form.as_p }}
+                    {{ form.as_p }}
                     {% csrf_token %}
-                   
-                    <p><input type="submit" value="sign Up"></p>
+                    <p><input type="submit" value="log in"></p>
                 </form>
-                <div class="signup">
-                    <p class="no-account"> Have  an account ? <a href="{%url 'login' %} " class="signup-link"> Login </a> </p>
-                </div>
 
             </div>
         </div>
@@ -42,7 +33,6 @@
 
 
     </section>
-    {% endblock %}
 
 
 

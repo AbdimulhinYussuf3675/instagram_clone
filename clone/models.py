@@ -6,9 +6,9 @@ from django.contrib.auth.models import User
 
 class  Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-    date_of_birth = models.DateField(blank =True, null =True)
+    location = models.CharField(max_length=50, blank=True)
     photo = models.ImageField(upload_to='users/' , blank=True , default='../static/photos/profile.jpeg')
-    bio = models.TextField(default="Hello everyone amusing insta-clone")
+    bio = models.TextField(max_length=350, default="Hello their am using instagram_clone", blank=True)
 
     def save_profile(self):
         self.save()

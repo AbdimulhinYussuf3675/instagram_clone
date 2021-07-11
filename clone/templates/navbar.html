@@ -13,7 +13,7 @@
 <nav class="navbar navbar-dark transparent justify-content-between" style="background-color: rgb(216, 139, 139); height: 100%;">
     <a class="navbar-brand" href="{% url 'dashboard' %}" style="color: white; font-size: 35px; font-style: italic; text-align: center;" href="/">Instagram~~clone</a>
     {% if request.user.is_authenticated %}
-    <form class="form-inline my-2 my-lg-0" action="{% url 'searches' %}" method="get">
+    <form class="form-inline my-2 my-lg-0" action="" method="get">
         <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search User" aria-label="Search">
     </form>
     <ul class="navbar-nav mr-auto nav-right-items ">
@@ -24,8 +24,8 @@
                 {{request.user.username}} <i class="fas fa-user nav-icons"></i>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{%url 'profile' %}">Profile</a>
-                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                <a class="dropdown-item" href="">Profile</a>
+                <a class="dropdown-item" href="">Logout</a>
         </li>
         </li>
 

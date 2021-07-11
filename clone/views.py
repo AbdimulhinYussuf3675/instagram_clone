@@ -22,11 +22,11 @@ def register(request):
             # save the new user
             new_user.save()
             Profile.objects.create(user= new_user)
-            messages.success(request ,'Account created successfully')
+            messages.success(request ,'Account created successfully you can login')
             return redirect('dashboard')
 
         else:
-            messages.error(request ,'This credential already exist')
+            messages.error(request ,'This account already exist')
             return render(request,'account/register.html' , {'user_form':user_form})
 
 

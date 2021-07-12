@@ -12,12 +12,11 @@ body{
 
 .login-box{
     margin: 0;
-    margin-top: 2%;
-    background-color:  #FFFFFF;
-    margin-left: 1%;
-    width: 50%;
-    height: 70%;
-    
+    margin-top: 1%;
+    background-color: #f5d4d4;
+    width: 70%;
+    height: 50%;
+    border: 1px solid #141313;
     padding: 10px;
 }
 

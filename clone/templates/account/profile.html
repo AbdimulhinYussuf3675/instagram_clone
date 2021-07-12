@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adams~instagramclone</title>
+    <title>Document</title>
     {% block styles %}
     {{block.super}}
-    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profi.css' %}">
     {% endblock %}
 </head>
 <body>
@@ -16,7 +16,7 @@
     
     <div class="container" style="margin-top: 20px;">
         <div class="profile-img ">
-            <img src="{{profile.photo.url }}" alt="" class="round" height ="250">
+            <img src="{{profile.photos.url }}" alt="" class="round" height ="250">
             <h2 class="profile-name">{{profile.user}}</h2>
             {% if profile.user.id == request.user.id %}
             <p class="profile-edit"><a href="{% url 'edit' %}"><button type="button" class="btn btn-outline-primary btn-rounded waves-effect">Edit Profile</button></a></p>

@@ -1,31 +1,32 @@
-<nav class="navbar navbar-dark transparent justify-content-between" style="background-color: #eeadad; height: 100%;">
-      <a class="navbar-brand" style="color: rgb(15, 14, 14); font-size: 35px; font-style: italic;  text-align: center;" href="">Instagramclone</a>
+<nav class="navbar navbar-dark transparent justify-content-between" style="background-color: #f5d4d4; height: 100%;">
+    <a class="navbar-brand logo" style="color: black;" href="{% url 'dashboard' %}">Instagramclone</a>
     {% if request.user.is_authenticated %}
-    <form class="form-inline my-2 my-lg-0" action="" method="get"></form>
-      <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search User" aria-label="Search">
+    <form class="form-inline my-2 my-lg-0" action="{% url 'searches' %}" method="get">
+        <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search User" aria-label="Search">
     </form>
-          <ul class="navbar-nav mr-auto nav-right-items ">
-                    <li class="nav-item dropdown">
+    <ul class="navbar-nav mr-auto nav-right-items ">
+        <li class="nav-item dropdown">
 
-                        <a class="nav-link dropdown-toggle " href="#" href="#" id="navbarDropdown" style="color: black;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{request.user.username}} <i class="fas fa-user nav-icons" style="color: black;"></i>
-                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="">Profile</a>
-                          <a class="dropdown-item" href="">Logout</a>
-                      </li>
-                  </li>
+            <a class="nav-link dropdown-toggle " href="#" href="#" id="navbarDropdown" style="color: black;"
+                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{request.user.username}} <i class="fas fa-user nav-icons" style="color: black;"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{%url 'profile' %}">Profile</a>
+                <a class="dropdown-item" href="{% url 'register' %}">Logout</a>
+        </li>
+        </li>
 
-                  <li class="nav-item">
+        <li class="nav-item">
 
-                    <a class="nav-link" href=""  role="button">
-                     <i class="fas fa-plus nav-icons"></i>
-                     </a>
+            <a class="nav-link" href="{% url 'create' %}" style="color: black;" role="button">
+                <i class="fas fa-plus nav-icons"></i>
+            </a>
 
-                    </li>
+        </li>
 
-                      {% endif %}
+        {% endif %}
 
 
-          </ul> 
+    </ul>
 </nav>

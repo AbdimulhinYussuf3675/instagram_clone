@@ -5,6 +5,14 @@
 ## Description
 Instagram_clone is simply a clone of the website for the popular photo app Instagram
 
+## User stories
+>As a user I should be able to:
+
+* Sign in to the application to start using.
+* Upload my pictures to the application.
+* See my profile with all my pictures.
+* Follow other users and see their pictures on my timeline.
+* Like a picture and leave a comment on it.
 
 ## Setup Instructions:
 ### Requirements
@@ -102,14 +110,7 @@ To run the application on your development machine,
 * Django-Admin
 
 
-## User stories
->As a user I should be able to:
 
-* Sign in to the application to start using.
-* Upload my pictures to the application.
-* See my profile with all my pictures.
-* Follow other users and see their pictures on my timeline.
-* Like a picture and leave a comment on it.
 
 ## Bugs
 * Displaying posts and some functionality of likes and follow

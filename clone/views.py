@@ -36,7 +36,7 @@ def register(request):
 
 
 
-@login_required
+@login_required(login_url='login')
 def dashboard(request):
     posts = Image.objects.all()
     comments = Comment.objects.all()

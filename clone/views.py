@@ -170,12 +170,3 @@ def searches(request):
     else:
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
-    
-
-
-
-
-    
-
-
-    
